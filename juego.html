@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="section1">
+            <header>
+                <h1>Game of memory</h1>
+            </header>
+            <table>
+                <tr>
+                    <td><button id="0" onclick="uncover(0)"></button></td>
+                    <td><button id="1" onclick="uncover(1)"></button></td>
+                    <td><button id="2" onclick="uncover(2)"></button></td>
+                    <td><button id="3" onclick="uncover(3)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="4" onclick="uncover(4)"></button></td>
+                    <td><button id="5" onclick="uncover(5)"></button></td>
+                    <td><button id="6" onclick="uncover(6)"></button></td>
+                    <td><button id="7" onclick="uncover(7)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="8" onclick="uncover(8)"></button></td>
+                    <td><button id="9" onclick="uncover(9)"></button></td>
+                    <td><button id="10" onclick="uncover(10)"></button></td>
+                    <td><button id="11" onclick="uncover(11)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="12" onclick="uncover(12)"></button></td>
+                    <td><button id="13" onclick="uncover(13)"></button></td>
+                    <td><button id="14" onclick="uncover(14)"></button></td>
+                    <td><button id="15" onclick="uncover(15)"></button></td>
+                </tr>
+            </table>
+        </section>
+        <section class="section2">
+            <header>
+                <h2>Information of game</h2>
+            </header>
+            <article class="estadisticas">
+                <header>
+                    <h3 id="successes">successes: 0</h3>
+                </header>
+            </article>
+
+            <article class="estadisticas">
+                <header>
+                    <h3 id="t-restante">Time: 30 seconds</h3>
+                </header>
+            </article>
+
+            <article class="estadisticas">
+                <header>
+                    <h3 id="movements">movements: 0</h3>
+                </header>
+            </article>
+        </section>
+    </main>
+    <script src="main20.js"></script>
+</body>
+</html>
