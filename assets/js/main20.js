@@ -42,6 +42,7 @@ function countTime(){
             clearInterval(regressiveTime);
             // disabled cards
             disabledCards();
+            loseAudio.play()
         }
     }, 1000);
 }
@@ -73,7 +74,7 @@ function uncover(idButton){
         firstResult = numbers[idButton];
         // insert the value of the array of numbers
         card1.innerHTML = `<img src="assets/img/${firstResult}.png" alt="imagen de las cartas">`;
-
+        clickAudio.play();
         // first button pressed disabled
         card1.disabled = true;
             // the uncovered cards increases by one every time that the user presses a button
@@ -96,15 +97,12 @@ function uncover(idButton){
             // increase successes
             successes++;
             showSuccesses.innerHTML = `Successes: ${successes}`;
+            rightAudio.play();
 
-            if(successes === 8){
-                clearInterval(regressiveTime);
-                showSuccesses.innerHTML = `Successes ${successes} :o`;
-                showTime.innerHTML = `great you took ${initialTime - time} seconds`;
-                showMovements.innerHTML =  `Movements ${movements} :o`;
-            }
+            
 
         }else{
+            wrongAudio.play();
             // show values for a few seconds
             setTimeout(() => {
                 card1.innerHTML = '';
@@ -114,6 +112,14 @@ function uncover(idButton){
                 uncoveredCards = 0;
             }, 800);
         }
+    }
+
+    if(successes === 8){
+        clearInterval(regressiveTime);
+        showSuccesses.innerHTML = `Successes ${successes} :o`;
+        showTime.innerHTML = `great you took ${initialTime - time} seconds`;
+        showMovements.innerHTML =  `Movements ${movements} :o`;
+        winAudio.play();
     }
 }
 console.log(numbers);
