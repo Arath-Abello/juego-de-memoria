@@ -45,6 +45,9 @@ button:hover{
     border-radius: 8px;
     padding: 8px 20px;
 }
+img{
+    width: 80%;
+}
 @media (320px <= width <= 375px) {
     button{
         width: 65px;

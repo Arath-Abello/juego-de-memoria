@@ -13,6 +13,12 @@ let time = 30;
 let initialTime = 30; 
 let regressiveTime = null;
 
+let winAudio = new Audio('/assets/sounds/win.wav');
+let loseAudio = new Audio('/assets/sounds/lose.wav');
+let clickAudio = new Audio('/assets/sounds/click.wav');
+let rightAudio = new Audio('/assets/sounds/right.wav');
+let wrongAudio = new Audio('/assets/sounds/wrong.wav');
+
 // get the value of the id 'movements'
 let showMovements = document.getElementById('movements');
 
@@ -43,7 +49,7 @@ function countTime(){
 function disabledCards(){
     for (let index = 0; index <= index; index++) {
         let disabledCardss = document.getElementById(index);
-        disabledCardss.innerHTML = numbers[index];
+        disabledCardss.innerHTML = `<img src="assets/img/${numbers[index]}.png" alt="imagen de las cartas">`;
         disabledCardss.disabled = true;
     }
 }
@@ -56,26 +62,27 @@ function uncover(idButton){
         timer = true;
     }
 
-    // the uncovered cards increases by one every time that the user presses a button
-    uncoveredCards++;
+
 
     // if the user presses the first button, so
-    if(uncoveredCards === 1){
+    if(uncoveredCards == 0){
         // show the first number
         // get the value of the element by id
         card1 = document.getElementById(idButton);
         // bind the value of the parameter to the array 
         firstResult = numbers[idButton];
         // insert the value of the array of numbers
-        card1.innerHTML = `<img src="../img/${firstResult}.png" alt="imagen de las cartas">`;
+        card1.innerHTML = `<img src="assets/img/${firstResult}.png" alt="imagen de las cartas">`;
 
         // first button pressed disabled
         card1.disabled = true;
-    }else if(uncoveredCards === 2){
+            // the uncovered cards increases by one every time that the user presses a button
+    uncoveredCards++;
+    }else if(uncoveredCards == 1){
         // show the second number
         card2 = document.getElementById(idButton);
         secondResult = numbers[idButton];
-        card2.innerHTML = secondResult;
+        card2.innerHTML = `<img src="assets/img/${secondResult}.png" alt="imagen de las cartas">`;
         card2.disabled = true;
 
         // increase the movement
