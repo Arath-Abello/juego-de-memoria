@@ -67,7 +67,7 @@ function uncover(idButton){
         // bind the value of the parameter to the array 
         firstResult = numbers[idButton];
         // insert the value of the array of numbers
-        card1.innerHTML = firstResult;
+        card1.innerHTML = `<img src="../img/${firstResult}.png" alt="imagen de las cartas">`;
 
         // first button pressed disabled
         card1.disabled = true;
